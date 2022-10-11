@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Form from "react-bootstrap/Form";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { addData } from "./AdminSlice";
+import { addData } from "../AdminSlice";
 
 function AddAdmin() {
   const [name, setName] = useState("");
@@ -13,6 +13,7 @@ function AddAdmin() {
   const [img, setImg] = useState("");
 
   const numberOfAdmin = useSelector((state) => state.adminReducer.list.length);
+  const lists = useSelector((state) => state.adminReducer.list);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -27,7 +28,8 @@ function AddAdmin() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newList = { id: numberOfAdmin + 1, name, email, cell, img };
+    let lastId = lists[numberOfAdmin - 1].id;
+    const newList = { id: lastId + 1, name, email, cell, img };
     dispatch(addData(newList));
     navigate("/", { replace: true });
   };

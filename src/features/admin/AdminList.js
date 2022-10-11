@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
+import DeleteAdmin from "./DeleteAdmin";
 
 function AdminList() {
   const lists = useSelector((state) => state.adminReducer.list);
@@ -76,15 +77,19 @@ function AdminList() {
                   <td>{email} </td>
                   <td>{cell}</td>
                   <td>
-                    <Button style={{ margin: "10px" }} variant="success">
-                      EDIT
-                    </Button>{" "}
+                    <Link
+                      to={`/edit/${id}`}
+                      state={{ name, email, cell, img }}
+                      style={{ margin: "10px" }}
+                    >
+                      <Button variant="success">EDIT</Button>
+                    </Link>
                     <Button style={{ margin: "10px" }} variant="info">
                       VIEW
                     </Button>
-                    <Button style={{ margin: "10px" }} variant="danger">
-                      DELETE
-                    </Button>
+                    <Link to={`/delete/${id}`} style={{ margin: "10px" }}>
+                      <DeleteAdmin />
+                    </Link>
                   </td>
                 </tr>
               );
