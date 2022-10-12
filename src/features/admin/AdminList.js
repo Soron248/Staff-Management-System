@@ -84,9 +84,11 @@ function AdminList() {
                     >
                       <Button variant="success">EDIT</Button>
                     </Link>
-                    <Button style={{ margin: "10px" }} variant="info">
-                      VIEW
-                    </Button>
+                    <Link to={`/view/${id}`} state={{ name, email, cell, img }}>
+                      <Button style={{ margin: "10px" }} variant="info">
+                        VIEW
+                      </Button>
+                    </Link>
                     <Link to={`/delete/${id}`} style={{ margin: "10px" }}>
                       <DeleteAdmin />
                     </Link>

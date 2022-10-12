@@ -39,7 +39,7 @@ function DeleteAdmin() {
         <Modal.Body>
           {lists &&
             lists.map((list) => {
-              if (list.id === id) {
+              if (list.id == id) {
                 return (
                   <p key={list.id}>
                     Are you sure to DELETE{" "}
