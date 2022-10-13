@@ -12,6 +12,7 @@ function Index() {
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/Staff-Management-System" element={<Home />} />
         <Route path="/delete/:id" element={<Home />} />
         <Route path="/view/:id" element={<ViewAdmin />} />
         <Route path="/addAdmin" element={<AddAdmin />} />

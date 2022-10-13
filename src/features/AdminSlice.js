@@ -5,16 +5,9 @@ const initialAdminData = {
     {
       id: 1,
       name: "Soron",
-      email: "srn@gmail.com",
+      email: "soron@gmail.com",
       cell: "+8801752281870",
       img: "./image/srn.jpg",
-    },
-    {
-      id: 2,
-      name: "Sezan",
-      email: "szn@gmail.com",
-      cell: "+8801754288855",
-      img: "./image/szn.jpg",
     },
   ],
 };

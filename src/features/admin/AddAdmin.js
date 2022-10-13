@@ -28,7 +28,13 @@ function AddAdmin() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let lastId = lists[numberOfAdmin - 1].id;
+    let lastId;
+    if (numberOfAdmin == 0) {
+      lastId = 0;
+    } else {
+      lastId = lists[numberOfAdmin - 1].id;
+    }
+
     const newList = { id: lastId + 1, name, email, cell, img };
     dispatch(addData(newList));
     navigate("/", { replace: true });
